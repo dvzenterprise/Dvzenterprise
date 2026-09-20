@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DVZ Enterprise — Organizar · Executar · Evoluir</title>
+  
+  <!-- Fonte Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #004B87;
+      --bg-secondary: #0B4A75;
+      --accent-gold: #FFD700;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text-main: #FFFFFF;
+      --text-muted: #D0E1F9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, var(--bg-secondary) 0%, #03233E 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 90px 20px 50px;
+      background: radial-gradient(circle at top, rgba(0, 75, 135, 0.6) 0%, transparent 70%);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #FFF 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .discord-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-main);
+      color: var(--bg-secondary);
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .discord-btn:hover {
+      transform: translateY(-3px);
+      background: var(--accent-gold);
+      color: #03233E;
+      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+    }
+
+    nav {
+      background: rgba(3, 35, 62, 0.9);
+      padding: 15px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 35px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 215, 0, 0.4);
+    }
+
+    section.full-width {
+      grid-column: 1 / -1;
+    }
+
+    h2 {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: var(--text-main);
+      font-size: 1.15rem;
+      margin: 15px 0 8px;
+    }
+
+    p {
+      color: #E2E8F0;
+      font-size: 0.98rem;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      color: #E2E8F0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--accent-gold);
+      padding-left: 15px;
+      margin-top: 15px;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    /* Tabelas */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background: rgba(0, 75, 135, 0.4);
+      color: var(--accent-gold);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 215, 0, 0.15);
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      section {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DVZ Enterprise</h1>
+    <p>Organizar · Executar · Evoluir</p>
+    <a class="discord-btn" href="https://discord.gg/A3uDc72yKp" target="_blank" rel="noopener">
+      Entrar no Discord
+    </a>
+  </header>
+
+  <nav>
+    <a href="#fundador">Fundador</a>
+    <a href="#fundacao">Fundação</a>
+    <a href="#identidade">Identidade Visual</a>
+    <a href="#societario">Modelo S.A.</a>
+    <a href="#cultura">Cultura Kaizen</a>
+    <a href="#carta">Carta Constitucional</a>
+    <a href="#staff">Staff & Visão</a>
+  </nav>
+
+  <main class="grid-container">
+
+    <!-- Sessão Exclusiva do Fundador DVZ -->
+    <section id="fundador" class="full-width">
+      <h2>O Fundador — DVZ</h2>
+      <p><em>"O bom desempenho nasce da seriedade."</em></p>
+      <p>DVZ é especialista em Gestão Estratégica de Comunidades Digitais, Administração e Governança no Discord. Sua atuação foca-se na estruturação organizacional, crescimento sustentável e otimização de equipes de alta performance.</p>
+      
+      <h3>Método DVZ-STED</h3>
+      <p>Criador do <strong>DVZ-STED (Sistema DVZ de Estruturação por Departamentos)</strong>, uma metodologia desenvolvida para proporcionar clareza estrutural, divisão por departamentos funcionais e escalabilidade operacional em comunidades digitais.</p>
+
+      <h3>Competências Chave</h3>
+      <ul>
+        <li><strong>Gestão & Liderança:</strong> Estruturação de equipes de staff, moderação avançada, controle de ambiente e desenvolvimento de talentos.</li>
+        <li><strong>Estratégia & Comunicação:</strong> Marketing comunitário, parcerias táticas, documentação formal e comunicação institucional.</li>
+      </ul>
+      <blockquote>"Governar não é agradar a todos, mas garantir a ordem para que todos existam." — Maquiavel</blockquote>
+    </section>
+
+    <section id="fundacao">
+      <h2>Fundação e Propósito</h2>
+      <p>O DVZ Enterprise é um hub de alta performance centrado em três eixos essenciais: <strong>Negócios</strong>, <strong>Networking Executivo</strong> e <strong>Pensamento Crítico Racionalista</strong>.</p>
+    </section>
+
+    <section id="identidade">
+      <h2>Identidade Visual & Os 3 Bastões</h2>
+      <p>A paleta baseia-se no Azul Corporativo (<code>#004B87</code> / <code>#0B4A75</code>) e Branco Puro (<code>#FFFFFF</code>), simbolizando ordem, autoridade e transparência.</p>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Pilar</th>
+              <th>Função</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1ª Coluna (Gancho)</td>
+              <td><strong>Líderes</strong></td>
+              <td>Visão de futuro, impulso inicial e tomada de decisão.</td>
+            </tr>
+            <tr>
+              <td>Coluna Central</td>
+              <td><strong>Gestores</strong></td>
+              <td>Eixo de estabilidade, alinhamento e processos.</td>
+            </tr>
+            <tr>
+              <td>3ª Coluna (Elevada)</td>
+              <td><strong>Staffs</strong></td>
+              <td>Base técnica, rigor tático e execução diária.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="societario">
+      <h2>Modelo Societário (S.A. Simulada)</h2>
+      <p>Operamos sob uma estrutura inspirada em Sociedade Anônima de capital aberto simulado, impulsionando a economia interna por mérito e liderança.</p>
+      <ul>
+        <li><span class="badge">Ticker: DVZE</span></li>
+        <li><strong>Total de Ações:</strong> 100.000 ações emitidas</li>
+        <li><strong>Valor de Mercado Inicial:</strong> 1.000.000 Créditos</li>
+        <li><strong>Governança:</strong> Assembleia Geral de Acionistas, Conselho Consultivo e Diretoria Executiva.</li>
+      </ul>
+    </section>
+
+    <section id="cultura">
+      <h2>Cultura Kaizen & Hierarquia</h2>
+      <p>Adotamos a Filosofia Kaizen de melhoria contínua (evolução constante de 1% ao dia) em um modelo enxuto e desburocratizado:</p>
+      <ul>
+        <li><strong>Administração Estratégica:</strong> Deliberação máxima e visão.</li>
+        <li><strong>Liderança de Grupo:</strong> Coordenação e cumprimento de metas.</li>
+        <li><strong>Membros da Staff:</strong> Execução técnica com voz ativa na inovação.</li>
+      </ul>
+    </section>
+
+    <section id="carta" class="full-width">
+      <h2>Carta Constitucional & Código de Ética</h2>
+      <p>Promulgada para reger solenemente as interações, a governança e o Código de Ética do ecossistema.</p>
+      
+      <h3>Princípios e Conduta</h3>
+      <ul>
+        <li><strong>Conformidade Estrita com o Discord:</strong> Tolerância zero para automações não autorizadas, doxxing, assédio, spam e discurso de ódio.</li>
+        <li><strong>Mercado Interno & Ética:</strong> Preservação da imagem institucional, proibição de manipulação de preços ou fake news corporativas na Bolsa DVZE.</li>
+        <li><strong>Respeito Radical:</strong> Vedada qualquer manifestação de agressividade passiva ou ataques pessoais. O desacordo deve ser puramente intelectual e elevado.</li>
+      </ul>
+
+      <h3>Regime Disciplinar (Devido Processo)</h3>
+      <p>1. Notificação Verbal → 2. Advertência Formal → 3. Suspensão Temporária de Direitos → 4. Banimento Definitivo.</p>
+    </section>
+
+    <section id="staff" class="full-width">
+      <h2>Staff & Visão de Futuro</h2>
+      <p>A Staff do DVZ Enterprise é uma mini-comunidade unida por lealdade, propósito ideológico e camaradagem. Guiados pelo método DVZ-STED, construímos uma vanguarda orientada pela <strong>Nobreza, Liberdade, Networking e Visionarismo</strong>.</p>
+      <blockquote>"Toda grande estrutura precisa de um impulso que curva o destino e de pilares que sustentam o topo. No DVZ Enterprise, a visão que impulsiona se une à gestão que equilibra e à execução que sustenta."</blockquote>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>DVZ Enterprise © 2026 — Fundado por DVZ · Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
