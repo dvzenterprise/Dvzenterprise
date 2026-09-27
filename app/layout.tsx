@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'DVZ Enterprise. Para Líderes, Gestores e Staffs',
   description:
-    'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista. Estruturado sob o método DVZ-STED e a filosofia Kaizen.',
+    'Hub corporativo focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista. Estruturado sob o método DVZ-STED e a filosofia Kaizen.',
   generator: 'v0.app',
   keywords: [
     'DVZ Enterprise',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'DVZ Enterprise. Para Líderes, Gestores e Staffs',
     description:
-      'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
+      'Hub corporativo focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista. Estruturado sob o método DVZ-STED e a filosofia Kaizen.',
     type: 'website',
     url: 'https://dvz-gamma.vercel.app/',
     siteName: 'DVZ Enterprise',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DVZ Enterprise. Para Líderes, Gestores e Staffs',
     description:
-      'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
+      'Hub corporativo focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista. Estruturado sob o método DVZ-STED e a filosofia Kaizen.',
     images: ['https://dvz-gamma.vercel.app/og-image.png'],
   },
   verification: {
@@ -93,7 +93,7 @@ export default function RootLayout({
     'alternateName': ['DVZ', 'DVZ Enterprise Discord'],
     'url': 'https://dvz-gamma.vercel.app/',
     'logo': 'https://dvz-gamma.vercel.app/icon.svg',
-    'description': 'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
+    'description': 'Hub corporativo focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
     'knowsLanguage': ['pt-BR'],
     'sameAs': [
       'https://discord.gg/A3uDc72yKp'
