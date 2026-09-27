@@ -46,6 +46,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://dvz-gamma.vercel.app/',
     siteName: 'DVZ Enterprise',
+    locale: 'pt_BR',
     images: [
       {
         url: 'https://dvz-gamma.vercel.app/og-image.png',
@@ -89,8 +90,11 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'DVZ Enterprise',
+    'alternateName': ['DVZ', 'DVZ Enterprise Discord'],
     'url': 'https://dvz-gamma.vercel.app/',
     'logo': 'https://dvz-gamma.vercel.app/icon.svg',
+    'description': 'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
+    'knowsLanguage': ['pt-BR'],
     'sameAs': [
       'https://discord.gg/A3uDc72yKp'
     ],
