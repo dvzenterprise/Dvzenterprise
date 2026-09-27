@@ -4,7 +4,7 @@ import { SectionHeading } from './section-heading'
 const METRICS = [
   { label: 'Código do Ticker', value: 'DVZE' },
   { label: 'Total de Ações Emitidas', value: '100.000' },
-  { label: 'Preço Base de Emissão', value: '10 Créditos' },
+  { label: 'Preço Base de Emissão', value: '10.000 Sonhos' },
   { label: 'Valor de Mercado Inicial', value: '1.000.000' },
 ]
 
@@ -59,7 +59,7 @@ export function SocietySection() {
               ))}
             </dl>
             <p className="mt-5 text-center text-xs text-slate-500">
-              Valores expressos em Créditos. Estrutura simulada para fins de engajamento e mérito.
+              Valores expressos em Sonhos. Estrutura simulada para fins de engajamento e mérito.
             </p>
           </div>
 
