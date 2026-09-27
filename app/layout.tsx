@@ -45,12 +45,22 @@ export const metadata: Metadata = {
       'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
     type: 'website',
     url: 'https://dvz-gamma.vercel.app/',
-    siteName: 'DVZ Enterprise', // Define o nome do site para compartilhamento
+    siteName: 'DVZ Enterprise',
     images: [
       {
-        url: 'https://dvz-gamma.vercel.app/icon.svg',
+        url: 'https://dvz-gamma.vercel.app/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'DVZ Enterprise — Banner Oficial',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DVZ Enterprise. Para Líderes, Gestores e Staffs',
+    description:
+      'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
+    images: ['https://dvz-gamma.vercel.app/opengraph-image.png'],
   },
   verification: {
     google: 'LJsWXeSHu9KMvrmOybUQFGDW3vPaciTTW20RblsIVKQ',
@@ -67,7 +77,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // Informa explicitamente ao Google o nome oficial do site
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -76,7 +85,6 @@ export default function RootLayout({
     'url': 'https://dvz-gamma.vercel.app/',
   }
 
-  // Vincula a organização e o Discord
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
