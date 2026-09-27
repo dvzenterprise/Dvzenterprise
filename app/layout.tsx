@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: 'DVZ Enterprise',
     images: [
       {
-        url: 'https://dvz-gamma.vercel.app/opengraph-image.png',
+        url: 'https://dvz-gamma.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'DVZ Enterprise — Banner Oficial',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: 'DVZ Enterprise. Para Líderes, Gestores e Staffs',
     description:
       'Hub corporativo de alta performance focado em Negócios, Networking Executivo e Pensamento Crítico Racionalista.',
-    images: ['https://dvz-gamma.vercel.app/opengraph-image.png'],
+    images: ['https://dvz-gamma.vercel.app/og-image.png'],
   },
   verification: {
     google: 'LJsWXeSHu9KMvrmOybUQFGDW3vPaciTTW20RblsIVKQ',
