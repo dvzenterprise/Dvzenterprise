@@ -1,0 +1,62 @@
+import { ImageResponse } from 'next/og'
+
+export const runtime = 'edge'
+
+export const alt = 'DVZ Enterprise — Banner Oficial'
+export const size = {
+  width: 1200,
+  height: 630,
+}
+
+export const contentType = 'image/png'
+
+export default async function Image() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          background: '#f8f9fa',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: 'sans-serif',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+          {/* Logo em SVG */}
+          <svg
+            width="120"
+            height="120"
+            viewBox="0 0 1155 1209"
+            fill="#1D4978"
+          >
+            <path d="M 538.00,57.00 L 538.00,1051.00 L 800.00,1051.00 L 800.00,57.00 Z M 621.00,139.00 L 718.00,140.00 L 717.00,968.00 L 620.00,967.00 Z" />
+            <path d="M 439.00,4.00 L 176.00,4.00 L 176.00,523.00 L 171.00,623.00 L 165.00,678.00 L 159.00,716.00 L 145.00,779.00 L 130.00,827.00 L 112.00,871.00 L 97.00,901.00 L 81.00,928.00 L 52.00,969.00 L 4.00,1023.00 L 2.00,1027.00 L 60.00,1062.00 L 120.00,1108.00 L 176.00,1160.00 L 216.00,1207.00 L 223.00,1201.00 L 258.00,1161.00 L 292.00,1117.00 L 322.00,1070.00 L 346.00,1025.00 L 371.00,967.00 L 388.00,918.00 L 404.00,860.00 L 415.00,808.00 L 429.00,712.00 L 434.00,656.00 L 438.00,581.00 Z M 356.00,86.00 L 357.00,529.00 L 352.00,649.00 L 343.00,737.00 L 335.00,788.00 L 325.00,836.00 L 312.00,885.00 L 297.00,930.00 L 278.00,976.00 L 259.00,1014.00 L 237.00,1051.00 L 222.00,1073.00 L 214.00,1082.00 L 171.00,1043.00 L 128.00,1010.00 L 126.00,1007.00 L 149.00,975.00 L 168.00,943.00 L 188.00,903.00 L 203.00,867.00 L 213.00,839.00 L 226.00,795.00 L 235.00,757.00 L 244.00,707.00 L 253.00,631.00 L 258.00,536.00 L 258.00,87.00 Z" />
+            <path d="M 886.00,2.00 L 885.00,1170.00 L 1153.00,1170.00 L 1153.00,2.00 Z M 969.00,85.00 L 1071.00,86.00 L 1070.00,1088.00 L 968.00,1087.00 Z" />
+          </svg>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span
+              style={{
+                fontSize: 68,
+                fontWeight: 'bold',
+                color: '#1D4978',
+                lineHeight: 1.1,
+              }}
+            >
+              DVZ Enterprise
+            </span>
+            <span style={{ fontSize: 28, color: '#1D4978', marginTop: 10 }}>
+              Organizar · Executar · Evoluir
+            </span>
+          </div>
+        </div>
+      </div>
+    ),
+    {
+      ...size,
+    }
+  )
+}
